@@ -1,5 +1,4 @@
 import { useState } from "preact/hooks";
-import "./Page.css";
 
 export function Contact() {
   const [formData, setFormData] = useState({
@@ -24,13 +23,15 @@ export function Contact() {
   };
 
   return (
-    <div class="page-container">
-      <div class="page-content">
-        <h1>お問い合わせ</h1>
-        <p>ご質問やご意見をお聞かせください</p>
-        <form onSubmit={handleSubmit} class="contact-form">
-          <div class="form-group">
-            <label for="name">お名前</label>
+    <div class="min-h-[calc(100vh-80px)] p-8 w-full flex justify-start items-start md:p-4">
+      <div class="w-full">
+        <h1 class="text-4xl mb-4 text-gray-800 md:text-3xl">お問い合わせ</h1>
+        <p class="text-lg text-gray-600 mb-8">ご質問やご意見をお聞かせください</p>
+        <form onSubmit={handleSubmit} class="bg-white p-8 rounded-lg shadow-md mt-8 w-full">
+          <div class="mb-6">
+            <label for="name" class="block mb-2 font-medium text-gray-800">
+              お名前
+            </label>
             <input
               type="text"
               id="name"
@@ -39,10 +40,13 @@ export function Contact() {
               onInput={handleChange}
               required
               placeholder="山田 太郎"
+              class="w-full px-3 py-3 border border-gray-300 rounded text-base font-inherit transition-colors focus:outline-none focus:border-primary"
             />
           </div>
-          <div class="form-group">
-            <label for="email">メールアドレス</label>
+          <div class="mb-6">
+            <label for="email" class="block mb-2 font-medium text-gray-800">
+              メールアドレス
+            </label>
             <input
               type="email"
               id="email"
@@ -51,10 +55,13 @@ export function Contact() {
               onInput={handleChange}
               required
               placeholder="example@email.com"
+              class="w-full px-3 py-3 border border-gray-300 rounded text-base font-inherit transition-colors focus:outline-none focus:border-primary"
             />
           </div>
-          <div class="form-group">
-            <label for="message">メッセージ</label>
+          <div class="mb-6">
+            <label for="message" class="block mb-2 font-medium text-gray-800">
+              メッセージ
+            </label>
             <textarea
               id="message"
               name="message"
@@ -63,9 +70,13 @@ export function Contact() {
               required
               rows={5}
               placeholder="お問い合わせ内容をご記入ください"
+              class="w-full px-3 py-3 border border-gray-300 rounded text-base font-inherit transition-colors resize-y focus:outline-none focus:border-primary"
             />
           </div>
-          <button type="submit" class="submit-button">
+          <button
+            type="submit"
+            class="bg-gradient-to-r from-gradient-start to-gradient-end text-white px-4 py-3 rounded-lg text-base font-semibold cursor-pointer transition-all hover:-translate-y-0.5 hover:shadow-lg active:translate-y-0"
+          >
             送信する
           </button>
         </form>

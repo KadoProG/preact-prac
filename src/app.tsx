@@ -4,11 +4,10 @@ import { Home } from "./pages/Home";
 import { About } from "./pages/About";
 import { Registration } from "./pages/Registration";
 import { Contact } from "./pages/Contact";
-import "./app.css";
 
 export function App() {
   return (
-    <div class="app">
+    <div class="min-h-screen w-full bg-gray-100 box-border">
       <Navigation />
       <Router>
         <Route path="/" component={Home} />
