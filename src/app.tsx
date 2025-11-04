@@ -9,11 +9,20 @@ export function App() {
   return (
     <div class="min-h-screen w-full bg-gray-100 box-border">
       <Navigation />
-      <Router>
-        <Route path="/" component={Home} />
-        <Route path="/about" component={About} />
-        <Route path="/register" component={Registration} />
-        <Route path="/contact" component={Contact} />
+      <Router path={import.meta.env.VITE_APP_PATH}>
+        <Route path={`${import.meta.env.VITE_APP_PATH}/`} component={Home} />
+        <Route
+          path={`${import.meta.env.VITE_APP_PATH}/about`}
+          component={About}
+        />
+        <Route
+          path={`${import.meta.env.VITE_APP_PATH}/register`}
+          component={Registration}
+        />
+        <Route
+          path={`${import.meta.env.VITE_APP_PATH}/contact`}
+          component={Contact}
+        />
         <Route default component={Home} />
       </Router>
     </div>
