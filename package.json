@@ -9,6 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@untitledui/icons": "^0.0.19",
     "preact": "^10.27.2",
     "preact-router": "^4.1.2"
   },
